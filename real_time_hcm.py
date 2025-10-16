@@ -7,7 +7,10 @@ cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
     if not ret: #Kamera algılanmadıysa
+        print("Connect could not be established!")
         break
+    
+    frame = cv2.flip(frame,1)
 
     # Gri tonlamaya çevir
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
